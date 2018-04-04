@@ -11,6 +11,7 @@ if (config.env === 'development') {
   app.use(morgan('dev'));
 }
 
+app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
