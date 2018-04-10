@@ -3,10 +3,6 @@ const Schema = mongoose.Schema;
 
 const websiteSchema = new Schema({
   intro: {
-    disabled: {
-      type: Boolean,
-      default: false
-    },
     img: String,
     welcomeMessage: {
       type: String,
@@ -19,10 +15,6 @@ const websiteSchema = new Schema({
   },
 
   services: {
-    disabled: {
-      type: Boolean,
-      default: false
-    },
     title: {
       type: String,
       default: 'Services'
@@ -49,39 +41,7 @@ const websiteSchema = new Schema({
     ]
   },
 
-  portfolio: {
-    disabled: {
-      type: Boolean,
-      default: false
-    },
-    title: {
-      type: String,
-      default: 'Portfolio'
-    },
-    message: {
-      type: String,
-      default: 'Our Portfolio'
-    },
-    clients: [
-      {
-        name: {
-          type: String,
-          default: 'Client'
-        },
-        description: {
-          type: String,
-          default: 'Client description'
-        },
-        image: String
-      }
-    ]
-  },
-
   about: {
-    disabled: {
-      type: Boolean,
-      default: false
-    },
     title: {
       type: String,
       default: 'About us'
@@ -97,11 +57,7 @@ const websiteSchema = new Schema({
           type: String,
           default: Date.now()
         },
-        title: {
-          type: String,
-          default: 'History event'
-        },
-        message: {
+        description: {
           type: String,
           default: 'Event description'
         }
@@ -110,10 +66,6 @@ const websiteSchema = new Schema({
   },
 
   team: {
-    disabled: {
-      type: Boolean,
-      default: false
-    },
     title: {
       type: String,
       default: 'About us'
@@ -139,22 +91,31 @@ const websiteSchema = new Schema({
       }
     ]
   },
-
-  clients: {
-    disabled: {
-      type: Boolean,
-      default: false
+  socialMedia: {
+    facebook: {
+      type: String,
+      default: 'https://facebook.com'
     },
-    clients: [
-      {
-        name: {
-          type: String,
-          default: 'Client'
-        },
-        url: String,
-        image: String
-      }
-    ]
+    twitter: {
+      type: String,
+      default: 'https://twitter.com'
+    },
+    linkedin: {
+      type: String,
+      default: 'https://linkedin.com'
+    },
+    email: {
+      type: String,
+      default: 'test@test.com'
+    },
+    address: {
+      type: String,
+      default: 'Some Address no. 123A'
+    },
+    phoneNo: {
+      type: String,
+      default: '(0) 123 4567'
+    }
   }
 });
 

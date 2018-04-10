@@ -1,48 +1,113 @@
 import React from 'react';
+import {Carousel} from 'react-bootstrap';
 
-const TimelineItem = ({item, index}) => (<li className={`${index % 2 === 0
-    ? 'timeline-inverted'
-    : ''}`}>
-  <div className='timeline-image'>
-    <img className='rounded-circle img-fluid' src={item.image} alt={item.title}/></div>
-  <div className='timeline-panel'>
-    <div className='timeline-heading'>
-      <h4>{item.date}</h4>
-      <h4 className='subheading'>{item.title}</h4>
-    </div>
-    <div className='timeline-body'>
-      <p className='text-muted'>{item.message}</p>
-    </div>
+const HistoryItem = ({item}) => (<div className="feature">
+  <i className="fa fa-check"></i>
+  <div className="info">
+    <p className="date">{item.date}</p>
+    <p className="story">{item.description}</p>
   </div>
-</li>);
 
-const Timeline = ({items}) => {
+</div>);
+
+const HistoryItems = ({items}) => {
   if (!items || items.length === 0) 
     return null;
   return items.map((item, index) => {
-    return (<div className='row'>
-      <div className='col-lg-12'>
-        <ul className='timeline'>
-          <TimelineItem item={item} index={index} key={index}/>
-        </ul>
-      </div>
-    </div>);
+    return <HistoryItem item={item} key={index}/>
   });
 };
 
-const About = ({data}) => {
-  if (data.disabled) 
+const HistoryCarousel = ({items}) => {
+  if (!items || items.length === 0) 
     return null;
-  return (<section id='about'>
-    <div className='container'>
-      <div className='row'>
-        <div className='col-lg-12 text-center'>
-          <h2 className='section-heading text-uppercase'>{data.title}</h2>
-          <h3 className='section-subheading text-muted'>{data.message}</h3>
+  return (<Carousel>
+    {
+      items.map((item, index) => {
+        return (<Carousel.Item>
+          <img width={900} height={500} alt="900x500" src={item.image}/>
+        </Carousel.Item>)
+      })
+    }
+  </Carousel>);
+};
+
+const About = ({data}) => {
+  const style = {
+    backgroundImage: 'url(./img/background2.jpg)'
+  };
+
+  return [
+    <div id="about" className="section md-padding bg-grey" key={'about'}>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-6">
+            <div className="section-header">
+              <h2 className="title">{data.title}</h2>
+            </div>
+            <p>{data.message}</p>
+            <HistoryItems items={data.history}/>
+          </div>
+
+          <div className="col-md-6">
+            <HistoryCarousel items={data.history}/>
+          </div>
         </div>
       </div>
-      <Timeline items={data.history}/>
+
+      <div className="bg-img" style={style}>
+        <div className="overlay"></div>
+      </div>
+    </div>,
+
+    <div className="section sm-padding" key={'numbers'}>
+      <div className="bg-img" style={style}>
+        <div className="overlay"></div>
+      </div>
+
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-3 col-xs-6">
+            <div className="number">
+              <i className="fa fa-users"></i>
+              <h3 className="white-text">
+                <span className="counter">451</span>
+              </h3>
+              <span className="white-text">Happy clients</span>
+            </div>
+          </div>
+          <div className="col-sm-3 col-xs-6">
+            <div className="number">
+              <i className="fa fa-trophy"></i>
+              <h3 className="white-text">
+                <span className="counter">12</span>
+              </h3>
+              <span className="white-text">Awards won</span>
+            </div>
+          </div>
+
+          <div className="col-sm-3 col-xs-6">
+            <div className="number">
+              <i className="fa fa-coffee"></i>
+              <h3 className="white-text">
+                <span className="counter">154</span>K</h3>
+              <span className="white-text">Cups of Coffee</span>
+            </div>
+          </div>
+
+          <div className="col-sm-3 col-xs-6">
+            <div className="number">
+              <i className="fa fa-file"></i>
+              <h3 className="white-text">
+                <span className="counter">45</span>
+              </h3>
+              <span className="white-text">Projects completed</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>);
-}
+  ]
+};
+
 export default About;
