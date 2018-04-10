@@ -3,17 +3,6 @@ import axios from 'axios';
 
 import {Alert, Button} from 'react-bootstrap';
 
-import IntroEdit from './intro';
-import ServicesEdit from './services';
-
-// import Services from './services';
-// import Portfolio from './portfolio';
-// import About from './about';
-// import Team from './team';
-// import Clients from './clients';
-// import Contact from './contact';
-// import Footer from './footer';
-
 class Cms extends Component {
   constructor(props) {
     super(props);
@@ -78,28 +67,32 @@ class Cms extends Component {
     });
   }
 
+  // render() {
+  //   const {data, loading, modified} = this.state;
+  //   const {intro, services} = data;
+  //
+  //   if (loading)
+  //     return (<div>Loading</div>);
+  //
+  //   return (<div>
+  //     {
+  //       modified
+  //         ? <Alert bsStyle="danger" onDismiss={this.handleDismiss}>
+  //             <p>
+  //               You have changes on your website.
+  //             </p>
+  //             <Button bsStyle="danger" onClick={this.revertChanges}>Cancel</Button>
+  //             <Button bsStyle="success" onClick={this.saveChanges}>Save</Button>
+  //           </Alert>
+  //         : null
+  //     }
+  //     {/* <IntroEdit data={intro} updateData={this.updateData}/> */}
+  //     {/* <ServicesEdit data={services} updateData={this.updateData}/> */}
+  //     asd
+  //   </div>)
+  // }
   render() {
-    const {data, loading, modified} = this.state;
-    const {intro, services} = data;
-
-    if (loading) 
-      return (<div>Loading</div>);
-    
-    return (<div>
-      {
-        modified
-          ? <Alert bsStyle="danger" onDismiss={this.handleDismiss}>
-              <p>
-                You have changes on your website.
-              </p>
-              <Button bsStyle="danger" onClick={this.revertChanges}>Cancel</Button>
-              <Button bsStyle="success" onClick={this.saveChanges}>Save</Button>
-            </Alert>
-          : null
-      }
-      {/* <IntroEdit data={intro} updateData={this.updateData}/> */}
-      <ServicesEdit data={services} updateData={this.updateData}/>
-    </div>)
+    return (<div>Test CMS</div>)
   }
 };
 
