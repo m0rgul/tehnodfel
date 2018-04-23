@@ -1,99 +1,40 @@
 import React, {Component} from 'react';
-import axios from 'axios';
+import Loader from '../Loader';
 
-import {Alert, Button} from 'react-bootstrap';
-
-class Cms extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      originalData: {},
-      data: {},
-      loading: true,
-      error: null,
-      modified: false
-    };
-
-    this.handleDataUpdate = this.handleDataUpdate.bind(this);
-    this.updateData = this.updateData.bind(this);
-    this.saveChanges = this.saveChanges.bind(this);
-    this.revertChanges = this.revertChanges.bind(this);
+class CMS extends Component {
+  componentWillMount() {
+    this.props.fetchWebsiteData();
   }
 
-  handleDataUpdate(props) {
-    console.log(props);
-    this.setState({
-      data: {
-        ...this.state.data,
-        intro: {
-          ...this.state.data.intro,
-          [props.name]: props.value
-        }
-      }
-    });
-  }
-
-  updateData({section, newData}) {
-    let data = this.state.data;
-    data[section] = newData;
-    this.setState({data: data, modified: true});
-    // axios.put('/api/website', data).then(response => {
-    //   let {data} = response;
-    //   this.setState({data: data});
-    // }).catch(err => {
-    //   console.log(err);
-    // });
-  }
-
-  saveChanges() {
-    let data = this.state.data;
-    console.log(data);
-  }
-
-  revertChanges() {
-    let originalData = this.state.originalData;
-    this.setState({data: originalData, modified: false});
-  }
-
-  componentDidMount() {
-    axios.get('/api/website').then(response => {
-      let {data} = response;
-      let originalData = Object.assign({}, data);
-      this.setState({originalData: originalData, data: data, loading: false});
-    }).catch(err => {
-      console.log(err);
-      // this.setState({loading: false, error: err})
-    });
-  }
-
-  // render() {
-  //   const {data, loading, modified} = this.state;
-  //   const {intro, services} = data;
-  //
-  //   if (loading)
-  //     return (<div>Loading</div>);
-  //
-  //   return (<div>
-  //     {
-  //       modified
-  //         ? <Alert bsStyle="danger" onDismiss={this.handleDismiss}>
-  //             <p>
-  //               You have changes on your website.
-  //             </p>
-  //             <Button bsStyle="danger" onClick={this.revertChanges}>Cancel</Button>
-  //             <Button bsStyle="success" onClick={this.saveChanges}>Save</Button>
-  //           </Alert>
-  //         : null
-  //     }
-  //     {/* <IntroEdit data={intro} updateData={this.updateData}/> */}
-  //     {/* <ServicesEdit data={services} updateData={this.updateData}/> */}
-  //     asd
-  //   </div>)
-  // }
   render() {
-    return (<div>Test CMS</div>)
+    const {loading, error, data} = this.props.website;
+
+    if (data) {
+      return (<div className='cms container-fluid'>
+        <div className="row">
+          <h2 className='dashTitle'>Content Management System</h2>
+          <form className="form-horizontal">
+            {/* Intro forms */}
+            <h4>Intro Section</h4>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword3" placeholder="Password"/>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>);
+    } else {
+      if (loading) {
+        return <Loader/>;
+      }
+      if (error) {
+        return (<div>Error</div>);
+      }
+      return null;
+    }
   }
 };
 
-export default Cms;
+export default CMS;

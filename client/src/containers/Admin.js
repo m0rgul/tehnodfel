@@ -3,7 +3,7 @@ import {HashRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
 
 import DashNav from '../components/dashboard/dashNav';
 import DashMain from '../components/dashboard/dashMain';
-import Cms from '../components/cms/cms';
+import CmsContainer from '../components/cms/CmsContainer';
 
 import '../style/dashboard.css';
 
@@ -15,7 +15,7 @@ class Dashboard extends Component {
         <Router>
           <Switch>
             <Route path='/admin/dashboard' component={DashMain}/>
-            <Route path='/admin/cms' component={Cms}/>
+            <Route path='/admin/cms' component={CmsContainer}/>
 
             <Redirect exact={true} from='/admin/' to='/admin/dashboard'/>
           </Switch>
@@ -23,6 +23,6 @@ class Dashboard extends Component {
       </div>
     </div>);
   }
-}
+};
 
 export default Dashboard;

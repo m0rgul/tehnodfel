@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
+import {fetchWebsiteData, fetchWebsiteDataSuccess, fetchWebsiteDataError} from '../../actions/website';
 import {connect} from 'react-redux';
-import {fetchWebsiteData, fetchWebsiteDataSuccess, fetchWebsiteDataError} from '../actions/website';
-import WebsiteIndex from '../components/website';
-
-import '../style/website.css';
+import Loader from '../Loader';
+import Cms from './cms';
 
 const mapStateToProps = (state) => {
   return {website: state.website.website};
@@ -21,4 +20,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(WebsiteIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(Cms);
