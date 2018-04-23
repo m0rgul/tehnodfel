@@ -1,0 +1,29 @@
+.section {
+    position: relative;
+    &.md-padding {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+    &.sm-padding {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .section-header {
+        position: relative;
+        margin-bottom: 60px;
+        .title {
+            text-transform: capitalize;
+            &:after {
+                content: "";
+                display: block;
+                height: 4px;
+                width: 40px;
+                background-color: $primary;
+                margin-top: 20px;
+            }
+        }
+    }
+    .text-center .title:after {
+        margin: 20px auto 0px;
+    }
+}

@@ -1,20 +1,13 @@
 import React from 'react';
-import {
-  Navbar,
-  Nav,
-  NavItem,
-  NavDropdown,
-  MenuItem,
-  Glyphicon
-} from 'react-bootstrap';
+import { Nav, NavItem } from 'react-bootstrap';
 
-import {IndexLinkContainer} from 'react-router-bootstrap';
+import { IndexLinkContainer } from 'react-router-bootstrap';
 
 const DashNav = (props) => {
   return (<div id="sidebar-menu" className="sideBarMenuContainer">
     <div className="user-panel">
       <div className="pull-left image">
-        <img src="/img/author.jpg" alt="test image"/>
+        <img src="/img/author.jpg" alt="test" />
       </div>
       <div className="pull-left info">
         <p>User name</p>

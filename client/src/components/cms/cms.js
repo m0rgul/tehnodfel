@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Loader from '../Loader';
 
 class CMS extends Component {
@@ -7,7 +7,7 @@ class CMS extends Component {
   }
 
   render() {
-    const {loading, error, data} = this.props.website;
+    const { loading, error, data } = this.props.website;
 
     if (data) {
       return (<div className='cms container-fluid'>
@@ -16,10 +16,10 @@ class CMS extends Component {
           <form className="form-horizontal">
             {/* Intro forms */}
             <h4>Intro Section</h4>
-            <div class="form-group">
-              <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-              <div class="col-sm-10">
-                <input type="password" class="form-control" id="inputPassword3" placeholder="Password"/>
+            <div className="form-group">
+              <label htmlFor="inputPassword3" className="col-sm-2 control-label">Password</label>
+              <div className="col-sm-10">
+                <input type="password" className="form-control" id="inputPassword3" placeholder="Password" />
               </div>
             </div>
           </form>
@@ -27,7 +27,7 @@ class CMS extends Component {
       </div>);
     } else {
       if (loading) {
-        return <Loader/>;
+        return <Loader />;
       }
       if (error) {
         return (<div>Error</div>);

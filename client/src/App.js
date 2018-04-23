@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {HashRouter as Router, Route, Redirect, Switch} from 'react-router-dom';
+import React, { Component } from 'react';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Website from './containers/Website';
 import Admin from './containers/Admin';
@@ -12,10 +12,10 @@ class App extends Component {
   render() {
     return (<Router>
       <Switch>
-        <Route path='/' exact={true} component={Website}/>
-        <PrivateRoute path='/admin/:filter?' component={Admin}/>
-        <Route exact={true} path='/login' component={Login}/>
-        <Route component={NoMatch}/>
+        <Route path='/' exact={true} component={Website} />
+        <PrivateRoute path='/admin/:filter?' component={Admin} />
+        <Route exact={true} path='/login' component={Login} />
+        <Route component={NoMatch} />
       </Switch>
     </Router>);
   }

@@ -1,0 +1,81 @@
+// Google Fonts
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+body {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    color: $grey-3;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    color: $headers;
+}
+
+h1 {
+    font-size: 54px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 21px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+h5 {
+    font-size: 16px;
+}
+
+a {
+    color: $primary;
+    text-decoration: none;
+    -webkit-transition: 0.2s opacity;
+    transition: 0.2s opacity;
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        outline: none;
+        opacity: 0.8;
+        color: $primary;
+    }
+}
+
+.main-color {
+    color: $primary;
+}
+
+.white-text {
+    color: #FFF;
+}
+
+::-moz-selection {
+    background-color: $primary;
+    color: #FFF;
+}
+
+::selection {
+    background-color: $primary;
+    color: #FFF;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none
+}

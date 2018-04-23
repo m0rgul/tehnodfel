@@ -1,12 +1,11 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {fetchWebsiteData, fetchWebsiteDataSuccess, fetchWebsiteDataError} from '../actions/website';
+import { connect } from 'react-redux';
+import { fetchWebsiteData, fetchWebsiteDataSuccess, fetchWebsiteDataError } from '../actions/website';
 import WebsiteIndex from '../components/website';
 
 import '../style/website.css';
 
 const mapStateToProps = (state) => {
-  return {website: state.website.website};
+  return { website: state.website.website };
 }
 
 const mapDispatchToProps = (dispatch) => {
