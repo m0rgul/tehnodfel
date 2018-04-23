@@ -31,4 +31,9 @@ const updateWebsite = async (req, res) => {
   }
 };
 
-export default {getWebsite, addWebsite, updateWebsite};
+const contact = (req, res) => {
+  let {name, email, subject, message} = req.body;
+  res.send(`Hello, ${name}!`);
+};
+
+export default {getWebsite, addWebsite, updateWebsite, contact};

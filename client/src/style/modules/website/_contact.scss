@@ -1,24 +1,40 @@
-.contact {
-    margin: 15px 0px;
+#contact {
+  .contact {
+    margin: 15px 0;
     text-align: center;
+
     i {
-        font-size: 36px;
-        color: $primary;
-        margin-bottom: 20px;
+      font-size: 36px;
+      color: $primary;
+      margin-bottom: 20px;
     }
+  }
+
+  .contact-success {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 50px auto 20px;
+
+    h4 {
+      margin: 0;
+    }
+
+    a {
+      cursor: pointer;
+      font-size: 75%;
+      color: $primary;
+    }
+  }
 }
 
 .contact-form {
-    text-align: center;
-    margin-top: 40px;
-    .input {
-        margin-bottom: 20px;
-        &:nth-child(1),
-        &:nth-child(2) {
-            width: calc(50% - 10px);
-        }
-        &:nth-child(2) {
-            margin-left: 15px;
-        }
-    }
+  text-align: center;
+  margin-top: 40px;
+
+  .input {
+    margin-bottom: 1em;
+    height: 3em;
+    font-size: 1em;
+  }
 }

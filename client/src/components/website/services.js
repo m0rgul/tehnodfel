@@ -19,10 +19,11 @@ const ServicesList = ({services}) => {
 
 const Services = ({data}) => (<div id="service" className="section md-padding">
   <div className="container">
+    <div className="section-header text-center">
+      <h2 className="title">{data.title}</h2>
+      <p className="text-center text-muted">{data.message}</p>
+    </div>
     <div className="row">
-      <div className="section-header text-center">
-        <h2 className="title">{data.title}</h2>
-      </div>
       <ServicesList services={data.services}/>
     </div>
   </div>

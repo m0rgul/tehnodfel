@@ -7,6 +7,6 @@ const router = express.Router();
 
 router.use('/', website);
 router.use('/api/users', users);
-router.use('/api/website', cms)
+router.use('/api/website', cms);
 
 export default router;

@@ -23,8 +23,8 @@ class WebsiteIndex extends Component {
         <Services data={data.services}/>
         <About data={data.about}/>
         <Team data={data.team}/>
-        <Contact data={data.socialMedia}/>
-        <Footer/>
+        <Contact data={data.contact}/>
+        <Footer data={data.contact}/>
       </div>);
     } else {
       if (loading) {

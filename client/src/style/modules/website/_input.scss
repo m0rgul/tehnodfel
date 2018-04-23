@@ -6,22 +6,22 @@ input[type="date"],
 input[type="url"],
 input[type="tel"],
 textarea {
-    height: 40px;
-    width: 100%;
-    border: none;
-    background: $grey-2;
-    border-bottom: 2px solid $grey-3;
-    color: $inputTextColor;
-    padding: 0px 10px;
-    opacity: 0.5;
-    -webkit-transition: 0.2s border-color, 0.2s opacity;
-    transition: 0.2s border-color, 0.2s opacity;
+  height: 40px;
+  width: 100%;
+  border: none;
+  background: $grey-2;
+  border-bottom: 2px solid $grey-3;
+  color: $inputTextColor;
+  padding: 0 10px;
+  opacity: 0.5;
+  -webkit-transition: 0.2s border-color, 0.2s opacity;
+  transition: 0.2s border-color, 0.2s opacity;
 }
 
 textarea {
-    padding: 10px 10px;
-    min-height: 80px;
-    resize: vertical;
+  padding: 10px;
+  min-height: 80px;
+  resize: vertical;
 }
 
 input[type="text"]:focus,
@@ -32,6 +32,6 @@ input[type="date"]:focus,
 input[type="url"]:focus,
 input[type="tel"]:focus,
 textarea:focus {
-    border-color: $inputBorderColor;
-    opacity: 1;
+  border-color: $inputBorderColor;
+  opacity: 1;
 }

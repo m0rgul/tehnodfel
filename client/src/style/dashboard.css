@@ -1,17 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Varela+Round);
-html,
-body,
 #root,
-.dashboard {
+.dashboard,
+body,
+html {
   min-height: 100%;
   height: 100%; }
 
 body {
   overflow-x: hidden;
   overflow-y: auto; }
-
-#root {
-  background-color: #222d32; }
 
 body {
   font-family: 'Varela Round', sans-serif;

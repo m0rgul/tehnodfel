@@ -6,42 +6,66 @@ const Footer = ({data}) => (<footer id="footer" className="sm-padding bg-dark">
     <div className="row">
       <div className="col-md-12">
         <div className="footer-logo">
-          <a href="index.html">
+          <Link to="/">
             <img src="img/logo-alt.png" alt="logo"/>
-          </a>
+          </Link>
         </div>
 
         <ul className="footer-follow">
-          <li>
-            <a href="#">
-              <i className="fa fa-facebook"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i className="fa fa-twitter"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i className="fa fa-google-plus"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i className="fa fa-instagram"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i className="fa fa-linkedin"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i className="fa fa-youtube"></i>
-            </a>
-          </li>
+          {
+            data.facebook
+              ? <li>
+                  <a href={data.facebook} target='_blank'>
+                    <i className="fab fa-facebook fa-lg"></i>
+                  </a>
+                </li>
+              : null
+          }
+          {
+            data.twitter
+              ? <li>
+                  <a href={data.twitter} target='_blank'>
+                    <i className="fab fa-twitter fa-lg"></i>
+                  </a>
+                </li>
+              : null
+          }
+          {
+            data.googlePlus
+              ? <li>
+                  <a href={data.googlePlus} target='_blank'>
+                    <i className="fab fa-google-plus fa-lg"></i>
+                  </a>
+                </li>
+              : null
+          }
+          {
+            data.instagram
+              ? <li>
+                  <a href={data.instagram} target='_blank'>
+                    <i className="fab fa-instagram fa-lg"></i>
+                  </a>
+                </li>
+              : null
+          }
+          {
+            data.linkedin
+              ? <li>
+                  <a href={data.linkedin} target='_blank'>
+                    <i className="fab fa-linkedin fa-lg"></i>
+                  </a>
+                </li>
+              : null
+          }
+          {
+            data.youtube
+              ? <li>
+                  <a href={data.youtube} target='_blank'>
+                    <i className="fab fa-youtube fa-lg"></i>
+                  </a>
+                </li>
+              : null
+          }
         </ul>
 
         <div className="footer-copyright">

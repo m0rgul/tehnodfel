@@ -14,4 +14,8 @@ router.put('/', (req, res) => {
   return WebsiteController.updateWebsite(req, res);
 });
 
+router.post('/contact', (req, res) => {
+  return WebsiteController.contact(req, res);
+});
+
 export default router;

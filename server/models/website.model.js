@@ -91,7 +91,7 @@ const websiteSchema = new Schema({
       }
     ]
   },
-  socialMedia: {
+  contact: {
     facebook: {
       type: String,
       default: 'https://facebook.com'

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Carousel} from 'react-bootstrap';
+import Slider from './slider';
 
 const HistoryItem = ({item}) => (<div className="feature">
   <i className="fa fa-check"></i>
@@ -18,20 +18,6 @@ const HistoryItems = ({items}) => {
   });
 };
 
-const HistoryCarousel = ({items}) => {
-  if (!items || items.length === 0) 
-    return null;
-  return (<Carousel>
-    {
-      items.map((item, index) => {
-        return (<Carousel.Item>
-          <img width={900} height={500} alt="900x500" src={item.image}/>
-        </Carousel.Item>)
-      })
-    }
-  </Carousel>);
-};
-
 const About = ({data}) => {
   const style = {
     backgroundImage: 'url(./img/background2.jpg)'
@@ -44,13 +30,13 @@ const About = ({data}) => {
           <div className="col-md-6">
             <div className="section-header">
               <h2 className="title">{data.title}</h2>
+              <p className="text-muted">{data.message}</p>
             </div>
-            <p>{data.message}</p>
             <HistoryItems items={data.history}/>
           </div>
 
           <div className="col-md-6">
-            <HistoryCarousel items={data.history}/>
+            <Slider slides={data.history}/>
           </div>
         </div>
       </div>

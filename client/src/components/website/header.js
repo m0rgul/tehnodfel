@@ -62,63 +62,73 @@ class Header extends Component {
       <div className="bg-img" style={style}>
         <div className="overlay"></div>
       </div>
-
-      <Navbar id="nav" className={`navbar nav-transparent ${scrolling
-          ? 'fixed-nav'
+      <nav id="nav" className={`navbar nav-transparent navbar-expand-md ${scrolling
+          ? 'fixed-top'
           : ''}`}>
         <div className="container">
+          <Link to="#home" smooth={true} className="navbar-brand">
+            <img className="logo" src="img/logo.png" alt="logo"/>
+            <img className="logo-alt" src="img/logo-alt.png" alt="logo"/>
+          </Link>
 
-          <Navbar.Header>
-            <Navbar.Brand>
-              <Link to="#home" smooth={true}>
-                <img className="logo" src="img/logo.png" alt="logo"/>
-                <img className="logo-alt" src="img/logo-alt.png" alt="logo"/>
-              </Link>
-            </Navbar.Brand>
-          </Navbar.Header>
-          <Navbar.Collapse>
-            <Scrollspy items={['home', 'service', 'about', 'team', 'contact']} currentClassName="active" className="main-nav nav navbar-nav navbar-right">
-              <li>
-                <Link to="#home" smooth={true}>Home</Link>
-              </li>
-              <li>
-                <Link to="#service" smooth={true}>Services</Link>
-              </li>
-              <li>
-                <Link to="#about" smooth={true}>About</Link>
-              </li>
-              <li>
-                <Link to="#team" smooth={true}>Team</Link>
-              </li>
-              <li>
-                <Link to="#contact" smooth={true}>Contact</Link>
-              </li>
-            </Scrollspy>
-          </Navbar.Collapse>
+          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div className="collapse navbar-collapse justify-content-end" id="mainNav">
+            <div className="navbar-nav">
+              <Scrollspy items={['home', 'service', 'about', 'team', 'contact']} currentClassName="active" className="main-nav nav navbar-nav">
+                <li>
+                  <Link to="#home" smooth={true}>
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link to="#service" smooth={true}>
+                    Services
+                  </Link>
+                </li>
+                <li>
+                  <Link to="#about" smooth={true}>
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link to="#team" smooth={true}>Team</Link>
+                </li>
+                <li>
+                  <Link to="#contact" smooth={true}>Contact</Link>
+                </li>
+              </Scrollspy>
+            </div>
+          </div>
         </div>
-      </Navbar>
-
+      </nav>
       <div className="home-wrapper">
         <div className="container">
-          <div className="row">
-
-            <div className="col-md-10 col-md-offset-1">
+          <div className="row justify-content-md-center">
+            <div className="col-md-10">
               <div className="home-content">
-                <h1 className="white-text">{welcomeMessage}</h1>
-                <p className="white-text">{greetingMessage}</p>
-                <Link to="/#contact" smooth={true} className="white-btn">Get Started!</Link>
-                <Link to="/#service" smooth={true} className="main-btn">Learn more</Link>
+                <h1 className="white-text">
+                  {welcomeMessage}
+                </h1>
+                <p className="white-text">
+                  {greetingMessage}
+                </p>
+                <Link to="/#contact" smooth={true} className="white-btn">
+                  Get Started !
+                </Link>
+                <Link to="/#service " smooth={true} className="main-btn">
+                  Learn more
+                </Link>
               </div>
             </div>
-
           </div>
         </div>
       </div>
-
       <div id="back-to-top" className={`${backToTop
           ? 'show'
           : 'hide'}`} onClick={this.backToTop}></div>
-
     </header>);
   }
 }
