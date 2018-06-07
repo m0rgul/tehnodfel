@@ -11,7 +11,7 @@ class Dashboard extends Component {
   render() {
     return (<div className="dashboard">
       <DashNav/>
-      <div className="dashMain">
+      <div className="dashMain content-wrapper">
         <Router>
           <Switch>
             <Route path='/admin/dashboard' component={DashMain}/>

@@ -68,10 +68,10 @@ const Footer = ({data}) => (<footer id="footer" className="sm-padding bg-dark">
           }
         </ul>
 
-        <div className="footer-copyright">
-          <p>Copyright © 2017. All Rights Reserved. Designed by&nbsp;
+        <div className="footer-copyright text-center">
+          <small>Copyright © 2017. All Rights Reserved. Designed by&nbsp;
             <a href="https://colorlib.com" target="_blank">Colorlib</a>
-          </p>
+          </small>
 
         </div>
         <div className="footer-admin-link">

@@ -44,7 +44,7 @@ const TeamMembers = ({members}) => {
   return (<div className="row">
     {
       members.map(member => {
-        return <TeamMember member={member}/>
+        return <TeamMember member={member} key={member.name}/>
       })
     }
   </div>)

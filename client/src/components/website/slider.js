@@ -48,12 +48,12 @@ class Slider extends Component {
   render() {
     let {slides} = this.props;
     return (<div className="carousel slide carousel-fade">
-      <ol class="carousel-indicators">
+      <ol className="carousel-indicators">
         {
           slides.map((item, index) => {
             return (<li className={`${index === this.state.activeIndex
                 ? 'active'
-                : ''}`} onClick={() => this.goToSlide(index)}></li>)
+                : ''}`} onClick={() => this.goToSlide(index)} key={item.date}></li>)
           })
         }
       </ol>
@@ -62,7 +62,7 @@ class Slider extends Component {
           slides.map((item, index) => {
             return (<div className={`carousel-item ${index === this.state.activeIndex
                 ? 'active'
-                : ''}`}>
+                : ''}`} key={item.date}>
               <img className="d-block w-100" src={item.image} alt="First slide"/>
             </div>)
           })

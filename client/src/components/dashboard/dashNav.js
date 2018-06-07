@@ -1,31 +1,22 @@
 import React from 'react';
-import { Nav, NavItem } from 'react-bootstrap';
-
-import { IndexLinkContainer } from 'react-router-bootstrap';
 
 const DashNav = (props) => {
-  return (<div id="sidebar-menu" className="sideBarMenuContainer">
-    <div className="user-panel">
-      <div className="pull-left image">
-        <img src="/img/author.jpg" alt="test" />
-      </div>
-      <div className="pull-left info">
-        <p>User name</p>
-        <p className="status">
-          <i className="fa fa-circle text-success"></i>
-          <span>Status</span>
-        </p>
-      </div>
+  return (<nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <button className="navbar-toggler navbar-toggler-right" type="button">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+
+    <div className="collapse navbar-collapse">
+      <ul className="navbar-nav navbar-sidenav">
+        <li className="nav-item" title="Dashboard">
+          <a className="nav-link" href="index.html">
+            <i className="fas fa-tachometer-alt"></i>
+            <span className="nav-link-text">Dashboard</span>
+          </a>
+        </li>
+      </ul>
     </div>
-    <Nav bsStyle="pills" stacked={true}>
-      <IndexLinkContainer to='/admin/dashboard'>
-        <NavItem>Home</NavItem>
-      </IndexLinkContainer>
-      <IndexLinkContainer to='/admin/cms'>
-        <NavItem>CMS</NavItem>
-      </IndexLinkContainer>
-    </Nav>
-  </div>);
+  </nav>);
 };
 
 export default DashNav;
